@@ -12,6 +12,7 @@ dependencies:
   - libstdcxx-ng
   - ncurses
   - openssl
+  - pandas
   - pip
   - python<3.9,>=3.7
   - readline

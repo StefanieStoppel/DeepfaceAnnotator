@@ -1,5 +1,5 @@
 class Race6Mapper:
-    RACE_6_LABELS = ['asian', 'indian', 'black', 'white', 'middle eastern', 'latino hispanic']
+    RACE_6_LABELS = ['Asian', 'Indian', 'Black', 'White', 'Middle Eastern', 'Latino Hispanic']  # Deepface labels
     RACE_4_LABELS = ['White', 'Black', 'Asian', 'Indian']  # FairFace labels
     RACE_7_LABELS = ['White', 'Black', 'Latino_Hispanic', 'East Asian',
                      'Southeast Asian', 'Indian', 'Middle Eastern']  # FairFace labels
@@ -11,15 +11,15 @@ class Race6Mapper:
         self._most_likely_race = analysis_dict["dominant_race"]
 
     @property
-    def race_6_values(self):
+    def values(self):
         return self._race_6_dict.values()
 
     @property
-    def race_6_keys(self):
+    def keys(self):
         return self._race_6_dict.keys()
 
     @property
-    def race_6_items(self):
+    def items(self):
         return self._race_6_dict.items()
 
     @property

@@ -22,7 +22,7 @@ class AgeMapper:
         return self._exact_age
 
     @property
-    def age_group_fair_face(self):
+    def most_likely_age_group(self):  # according to FairFace notation
         age_group = None
         for label, group in self.AGE_MAPPING.items():
             if group["min"] <= self._exact_age <= group["max"]:
