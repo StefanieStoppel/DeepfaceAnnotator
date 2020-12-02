@@ -1,6 +1,6 @@
 from deepface import DeepFace
 
-from deepfaceannotator.mappers.gender_2_mappers import AgeMapper
+from deepfaceannotator.mappers.age_mapper import AgeMapper
 
 
 def analyze_face_image(face_image):
