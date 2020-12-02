@@ -24,4 +24,4 @@ class Race6Mapper:
 
     @property
     def most_likely_race(self):
-        return self._most_likely_race
+        return self._most_likely_race.capitalize()

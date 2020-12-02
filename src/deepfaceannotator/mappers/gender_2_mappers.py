@@ -27,4 +27,4 @@ class Gender2Mapper:
 
     @property
     def most_likely_gender(self):
-        return 'Female' if self._most_likely_gender is self.GENDER_LABELS_DEEPFACE[0] else 'Male'
+        return 'Female' if self._most_likely_gender == self.GENDER_LABELS_DEEPFACE[0] else 'Male'
