@@ -1,8 +1,69 @@
-name: DeepFace
+name: DeepfaceAnnotator
 channels:
   - defaults
 dependencies:
-  - python>=3.7
+  - _libgcc_mutex
+  - ca-certificates
+  - certifi
+  - ld_impl_linux-64
+  - libedit
+  - libffi
+  - libgcc-ng
+  - libstdcxx-ng
+  - ncurses
+  - openssl
   - pip
+  - python<3.9,>=3.7
+  - readline
+  - setuptools
+  - sqlite
+  - tk
+  - wheel
+  - xz
+  - zlib
   - pip:
     - deepface
+    - filelock
+    - flask
+    - gast
+    - gdown
+    - google-auth
+    - google-auth-oauthlib
+    - google-pasta
+    - grpcio
+    - h5py
+    - idna
+    - itsdangerous
+    - jinja2
+    - keras
+    - keras-preprocessing
+    - markdown
+    - markupsafe
+    - mtcnn
+    - numpy<1.19.0,>=1.16.0
+    - oauthlib
+    - opencv-python
+    - opt-einsum
+    - pandas
+    - pillow
+    - protobuf
+    - pyasn1
+    - pyasn1-modules
+    - pysocks
+    - python-dateutil
+    - pytz
+    - pyyaml
+    - requests
+    - requests-oauthlib
+    - rsa
+    - scipy
+    - six
+    - tensorboard
+    - tensorboard-plugin-wit
+    - tensorflow
+    - tensorflow-estimator
+    - termcolor
+    - tqdm
+    - urllib3
+    - werkzeug
+    - wrapt
