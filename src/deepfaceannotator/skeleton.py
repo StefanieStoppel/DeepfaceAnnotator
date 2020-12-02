@@ -25,23 +25,10 @@ __author__ = "Stefanie Stoppel"
 __copyright__ = "Stefanie Stoppel"
 __license__ = "mit"
 
+from deepfaceannotator.analyze import analyze_face_images
+from deepfaceannotator.utils import get_image_paths_from_csv
+
 _logger = logging.getLogger(__name__)
-
-
-def fib(n):
-    """Fibonacci example function
-
-    Args:
-      n (int): integer
-
-    Returns:
-      int: n-th Fibonacci number
-    """
-    assert n > 0
-    a, b = 1, 1
-    for i in range(n-1):
-        a, b = b, a+b
-    return a
 
 
 def parse_args(args):
@@ -54,16 +41,25 @@ def parse_args(args):
       :obj:`argparse.Namespace`: command line parameters namespace
     """
     parser = argparse.ArgumentParser(
-        description="Just a Fibonacci demonstration")
+        description="Run a facial attribute analysis on images of people's faces.")
     parser.add_argument(
         "--version",
         action="version",
         version="DeepfaceAnnotator {ver}".format(ver=__version__))
     parser.add_argument(
-        dest="n",
-        help="n-th Fibonacci number",
-        type=int,
-        metavar="INT")
+        "-i",
+        "--input-csv",
+        dest="input_csv",
+        help="Csv file containing the (absolute) paths of the images to run the analysis on.",
+        type=str,
+        required=True)
+    parser.add_argument(
+        "-o",
+        "--output-csv",
+        dest="output_csv",
+        help="Csv file to save the output annotations to.",
+        type=str,
+        required=True)
     parser.add_argument(
         "-v",
         "--verbose",
@@ -100,9 +96,10 @@ def main(args):
     """
     args = parse_args(args)
     setup_logging(args.loglevel)
-    _logger.debug("Starting crazy calculations...")
-    print("The {}-th Fibonacci number is {}".format(args.n, fib(args.n)))
-    _logger.info("Script ends here")
+    _logger.info("Starting analysis...")
+    image_paths = get_image_paths_from_csv(args.input_csv)
+    analyze_face_images(image_paths, args.output_csv)
+    _logger.info("Finished analysis")
 
 
 def run():
